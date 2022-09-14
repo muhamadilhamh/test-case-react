@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Bagaimana AntD X Tailwind Css?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**AntD**: AntD Merupakan satu set `component UI` library antarmuka yang bervariatif. [AntD](https://ant.design/docs/react/introduce)
 
-## Available Scripts
+**TailwindCss** : Tailwind CSS merupakan `utility-first` kerangka css yang digunakan dengan menggunakan class-class dan dapat disusun untuk membangun sebuah antarmuka. [Tailwind](https://tailwindcss.com/)
 
-In the project directory, you can run:
+Perbedaan antara keduanya Tailwind CSS menyaring css berdasarkan class yang ada pada element html sedangkan AntD memfilter css berdasarkan konfigurasi import.
 
-### `npm start`
+## Apakah AntD X Tailwind dapat digunakan berbarengan di React?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Tentu saja bisa, seperti beberapa statement dari [komunitas](https://stackoverflow.com/questions/68924385/how-to-use-antdesign-with-tailwindcss-together-in-a-react-project)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+"Use Tailwind for the layouting. Like the Grid, Column, and Flex Which mean basic Layout usage, When it comes to a react based component feature like A data table that time use Ant deisgn."
 
-### `npm test`
+Jadi secara singkat jika untuk segala kebutuhan fitur yang berbasis Js, AntD merupakan pilihan tepat. Namun kebuthan berbasis css, Tailwind Css merupakan pilihan yang terbaik.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Seperti contoh dari projek ini
+` <div className="px-10 justify-center md:flex md:flex-wrap items-center"> ... ...
+<Card key=.... className="mb-10 mr-5">...</Card>
 
-### `npm run build`
+</div>`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Dan hasilnya seperti [ini](./Image/tailwind%26Ant.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Adakah issue AntD X Tailwind jika digunakan berbarengan di React?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Seperti halnya yang dituliskan [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542) dapat mungkin terjadi conflik css seperti modal component AntD untuk memperlihatkan shows OK dan Cancel untuk secara default
 
-### `npm run eject`
+`<Modal title="Add city" onOk={} onCancel={} />`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Seperti screenshot di bawah yang diambil di artikel [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542). Tombol OK tidak terlihat
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[image-issue](/Image/Issue-1.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Faktanya Tailwind menerapkan warna latar belakang transparan, sedangkan AntD harus menerapkan latar belakang biru:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Seperti screenshot di bawah yang diambil di artikel [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542)
 
-## Learn More
+[image-issue](/Image/Issue-2.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Dan solusi untuk hal tersebut menonaktifkan tailwind [Preflight](https://tailwindcss.com/docs/preflight)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Seperti screenshot di bawah yang diambil di artikel [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542)
+
+[image-issue](/Image/Issue-3.png.png)
+
+## Kesimpulan
+
+Kombinasi AntD dan Tailwind Css dapat digunakan secara berbarengan. Dengan fungsi kebutuahan masing-masing AntD dengan kebutuhan JS dan Tailwind Css dengan kebutuhan CSS.

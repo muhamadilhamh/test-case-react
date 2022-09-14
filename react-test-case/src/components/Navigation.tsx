@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
       <Header className="bg-white shadow-md ">
         <Menu className="flex justify-center items-center ant-menu-horizontal py-2"> 
         <Link to={"/"}>
-          <Menu.Item className="text-gray-900 active:bg-gray-900 active:border active:border-gray-900">
+          <Menu.Item className="text-gray-900">
             News Case
           </Menu.Item>
           </Link>
