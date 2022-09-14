@@ -15,12 +15,10 @@ Tentu saja bisa, seperti beberapa statement dari [komunitas](https://stackoverfl
 Jadi secara singkat jika untuk segala kebutuhan fitur yang berbasis Js, AntD merupakan pilihan tepat. Namun kebuthan berbasis css, Tailwind Css merupakan pilihan yang terbaik.
 
 Seperti contoh dari projek ini
-` <div className="px-10 justify-center md:flex md:flex-wrap items-center"> ... ...
-<Card key=.... className="mb-10 mr-5">...</Card>
-
-</div>`
+`<div className="px-10 justify-center md:flex md:flex-wrap items-center"> ... ...<Card key=.... className="mb-10 mr-5">...</Card></div>`
 
 Dan hasilnya seperti [ini](./Image/tailwind%26Ant.png)
+<img src="./Image/tailwind%26Ant.png" width="128"/>
 
 ## Adakah issue AntD X Tailwind jika digunakan berbarengan di React?
 
@@ -31,18 +29,21 @@ Seperti halnya yang dituliskan [FabioBiondi](https://dev.to/fabiobiondi/react-an
 Seperti screenshot di bawah yang diambil di artikel [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542). Tombol OK tidak terlihat
 
 [image-issue](/Image/Issue-1.png)
+<img src="/Image/Issue-1.png" width="128"/>
 
 Faktanya Tailwind menerapkan warna latar belakang transparan, sedangkan AntD harus menerapkan latar belakang biru:
 
 Seperti screenshot di bawah yang diambil di artikel [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542)
 
 [image-issue](/Image/Issue-2.png)
+<img src="/Image/Issue-2.png" width="128"/>
 
 Dan solusi untuk hal tersebut menonaktifkan tailwind [Preflight](https://tailwindcss.com/docs/preflight)
 
 Seperti screenshot di bawah yang diambil di artikel [FabioBiondi](https://dev.to/fabiobiondi/react-antd-and-tailwind-fix-css-conflicts-5542)
 
 [image-issue](/Image/Issue-3.png.png)
+<img src="/Image/Issue-3.png" width="128"/>
 
 ## Kesimpulan
 
